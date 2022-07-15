@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks APP</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Lista de Tareas</h1>
+      <label for="task">
+        <input class="inputText" id="task" placeholder="¿Qué quieres hacer?" />
+      </label>
+      <button class="primary" onclick="addTask()">
+        <i class="fa fa-plus-circle"></i> Agregar tarea
+      </button>
+    </section>
+    <section class="tasksContainer">
+      <ul id="tasksList">
+        <li>
+          Comprar pan
+          <span class="tasksItemAction">
+            <i class="fa fa-check"></i>
+            <i class="fa fa-trash-o"></i>
+          </span>
+        </li>
+        <li>
+          Comprar café
+          <span class="tasksItemAction">
+            <i class="fa fa-check"></i>
+            <i styl class="fa fa-trash-o"></i>
+          </span>
+        </li>
+        <li>
+          Comprar arroz
+          <span class="tasksItemAction">
+            <i class="fa fa-check"></i>
+            <i class="fa fa-trash-o"></i>
+          </span>
+        </li>
+        <li>
+          Comprar leche
+          <span class="tasksItemAction">
+            <i class="fa fa-check"></i>
+            <i class="fa fa-trash-o"></i>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <script async src="./Tasks.js"></script>
+  </body>
+</html>
