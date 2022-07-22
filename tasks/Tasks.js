@@ -15,7 +15,7 @@ function addTask() {
 
   if (task) {
     tasksArray.push({
-      id: tasksArray.length,
+      id: tasksArray.length, // Tamaño del array
       activity: task,
       done: false,
     }); // agregar tarea a la colección de tareas
@@ -25,19 +25,41 @@ function addTask() {
   }
 }
 
-// Mostrar las tareas
-function showTasks() {
-  tasksList.innerHTML = "";
-
-  if (tasksArray.length) {
-    tasksArray.forEach((value) => {
-      const text = document.createTextNode(value.activity);
-      const li = document.createElement("li");
-      li.appendChild(text);
-      li.setAttribute("id", value.id); // Agregar un atributo id a cada tarea
-      tasksList.appendChild(li);
+// Editar una tarea
+function editTask(status, id) {
+  if (!status) {
+    const index = tasksArray.findIndex((value) => {
+      return value.id === id;
     });
+    tasksArray[index].done = true;
+    showTasks();
   }
 }
 
-//# sourceMappingURL=Tasks.js.map
+// Mostrar las tareas
+function showTasks() {
+  tasksList.innerHTML = ""; // Limpiar el contenido del elemento
+
+  if (tasksArray.length) {
+    tasksList.setAttribute("class", "tasksList"); // Agregar clase al elemento
+    tasksArray
+      .sort((a, b) => a.done - b.done) // Ordenar las tareas por estado (hecha o no hecha)
+      .forEach((value) => {
+        // Recorrer el array de tareas
+        const li = document.createElement("li");
+        // string templates
+        li.innerHTML = ` 
+      <span class="${value.done ? "tasksItemDone" : ""}">${
+          value.activity
+        }</span>
+      <span class="tasksItemAction">
+        <i class="fa fa-check ${
+          value.done ? "hidden" : "" // Si la tarea está hecha, no mostrar el icono
+        }"  onclick='editTask(${value.done}, ${value.id})'></i>
+        <i class="fa fa-trash-o"></i>
+      </span>
+      `;
+        tasksList.appendChild(li); // Agregar el elemento al DOM
+      });
+  }
+}
