@@ -19,9 +19,14 @@ function addTask() {
       activity: task,
       done: false,
     }); // agregar tarea a la colección de tareas
-    taskInput.value = "";
-
+    taskInput.value = ""; // Limpiar el input
+    taskInput.placeholder = '¿Qué quieres hacer?' // Cambiar el placeholder a la versión original
+    taskInput.classList.remove('inputText--error') // Eliminar la clase de error
     showTasks();
+  } else {
+    taskInput.focus() // Focus en el input
+    taskInput.classList.add('inputText--error') // Agregar clase de error
+    taskInput.placeholder = '¡Agrega una tarea!' // Cambiar el placeholder a la versión de error
   }
 }
 
@@ -69,17 +74,19 @@ function showTasks() {
         const li = document.createElement("li");
         // string templates
         li.innerHTML = ` 
-      <span class="${value.done ? "tasksItemDone" : ""}">${
+      <span class="tasksItem${value.done ? " tasksItem--done" : ""}">${
           value.activity
         }</span>
       <span class="tasksItemAction">
-        <i class="fa fa-check ${
+        <i class="fa fa-check tasksItemAction-done ${
           value.done ? "hidden" : "" // Si la tarea está hecha, no mostrar el icono
         }"  onclick='editTask(${value.done}, ${value.id})'></i>
-        <i class="fa fa-trash-o" onclick='deleteTask(${value.id})'></i>
+        <i class="fa fa-trash-o tasksItemAction-delete" onclick='deleteTask(${value.id})'></i>
       </span>
       `;
         tasksList.appendChild(li); // Agregar el elemento al DOM
       });
+
+    taskInput.focus()
   }
 }

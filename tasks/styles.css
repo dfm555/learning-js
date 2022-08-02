@@ -27,6 +27,10 @@ h1 {
   color: #555;
 }
 
+.inputText--error::placeholder {
+  color: crimson;
+}
+
 .primary {
   background: #fff;
   border-radius: 6px;
@@ -63,21 +67,29 @@ h1 {
   width: 300px;
   margin: 20px 0;
   list-style: none;
-  padding: 5px;
+  padding: 0;
+}
+
+.tasksList li:nth-child(2n) {
+  background: #f8f8f8;
 }
 
 .tasksList li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
+  padding: 10px 5px;
 }
 
 .tasksList li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
-.tasksItemDone {
+.tasksItem{
+  flex: 1;
+}
+
+.tasksItem--done {
   text-decoration: line-through;
   color: darkgrey;
 }
@@ -96,20 +108,20 @@ h1 {
   text-align: center;
 }
 
-.tasksItemAction i:nth-child(1) {
+.tasksItemAction .tasksItemAction-done  {
   background: #57bd84;
   border-color: #449469;
 }
 
-.tasksItemAction i:nth-child(2) {
+.tasksItemAction .tasksItemAction-delete {
   background: crimson;
   border-color: #b22222;
 }
 
-.tasksItemAction i:nth-child(1):hover {
+.tasksItemAction-done:hover {
   background: #3eb370;
 }
-.tasksItemAction i:nth-child(2):hover {
+.tasksItemAction-delete:hover {
   background: #c11335;
 }
 
