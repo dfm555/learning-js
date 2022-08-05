@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #57bd84;
+  background: deepskyblue;
 }
 
 .container {
@@ -85,7 +85,7 @@ h1 {
   border-bottom: 1px solid #ccc;
 }
 
-.tasksItem{
+.tasksItem {
   flex: 1;
 }
 
@@ -108,9 +108,13 @@ h1 {
   text-align: center;
 }
 
-.tasksItemAction .tasksItemAction-done  {
+.tasksItemAction .tasksItemAction-done {
   background: #57bd84;
   border-color: #449469;
+}
+.tasksItemAction .tasksItemAction-edit {
+  background: #ccc;
+  border-color: #8d8d8d;
 }
 
 .tasksItemAction .tasksItemAction-delete {
@@ -120,6 +124,10 @@ h1 {
 
 .tasksItemAction-done:hover {
   background: #3eb370;
+}
+
+.tasksItemAction-edit:hover {
+  background: #9e9e9e;
 }
 .tasksItemAction-delete:hover {
   background: #c11335;
