@@ -31,3 +31,5 @@ class Tasks {
     this.taskList = this.taskList.filter((task) => task.id !== id);
   }
 }
+
+const tasks = new Tasks();
