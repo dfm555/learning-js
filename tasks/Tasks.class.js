@@ -32,4 +32,4 @@ class Tasks {
   }
 }
 
-const tasks = new Tasks();
+export default Tasks;

@@ -33,7 +33,7 @@
       <label for="task">
         <input class="inputText" id="task" placeholder="¿Qué quieres hacer?" />
       </label>
-      <button type="button" class="primary" onclick="tasks.addTask()">
+      <button id="addTask" type="button" class="primary">
         <i class="fa fa-plus-circle"></i> Agregar tarea
       </button>
     </section>
@@ -42,6 +42,6 @@
     </section>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <!-- <script async src="./Tasks.js"></script>-->
-    <script async src="./Tasks.class.js"></script>
+    <script type="module" async src="./tasks.view.js"></script>
   </body>
 </html>
