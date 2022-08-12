@@ -20,11 +20,13 @@ class Tasks {
     }
   }
 
-  editTask(id, value) {
-    const index = this.taskList.findIndex((value) => {
-      return value.id === id;
+  editTask(id, property, value) {
+    this.taskList = this.taskList.map((task) => {
+      if (task.id === id) {
+        task[property] = value;
+      }
+      return task;
     });
-    this.taskList[index].activity = value;
   }
 
   deleteTask(id) {
